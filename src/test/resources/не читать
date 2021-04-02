@@ -1,0 +1,24 @@
+        /*SelenideElement buttonAdd = $(shadowCss("msg-app > main > msg-page > div.messenger_side > msg-chats-panel > div > msg-chats-list > msg-chats-list-item:nth-child(2)", "#msg_layer"));
+        buttonAdd.click();*/
+        /*JavascriptExecutor jse = (JavascriptExecutor)getWebDriver();
+        Long b = (Long) jse.executeScript("return document.querySelector('#msg_layer').shadowRoot.querySelector('msg-app > main > msg-page > div.messenger_side > msg-chats-panel > div > msg-chats-list').getElementsByTagName('msg-chats-list-item').length");
+        System.out.println(b);*/
+        /*Long c = (Long) jse.executeScript("return document.querySelector('#msg_layer').shadowRoot.querySelector('msg-app > main > msg-page > div.messenger_side > msg-chats-panel > div > msg-chats-list').getElementsByTagName('msg-chats-list-item').length");
+        System.out.println(c);
+
+        TimeUnit.SECONDS.sleep(10);
+
+        TimeUnit.SECONDS.sleep(5);
+        SelenideElement input = $(shadowCss("msg-app > main > msg-page > div.messenger_main > msg-chat > main > section > footer > msg-posting-form > div > div > div.input > msg-input", "#msg_layer"));
+        input.click();
+        TimeUnit.SECONDS.sleep(5);
+        input.sendKeys("dsfsdfdsfs");
+        TimeUnit.SECONDS.sleep(5);
+
+        button.click();
+        TimeUnit.SECONDS.sleep(1);
+        WebElement str = (WebElement)jse.executeScript("return document.querySelector('#msg_layer').shadowRoot.querySelector('msg-app > main > msg-page > div.messenger_side > msg-chats-panel > msg-toolbar > main > slot > msg-bubble > div > slot > msg-menu > slot > msg-menu-item:nth-child(1) > slot > msg-tico > span > slot > msg-l10n')");
+        str.click();
+        TimeUnit.SECONDS.sleep(1);
+        WebElement b = (WebElement)jse.executeScript("return document.querySelector('#msg_layer').shadowRoot.querySelector('msg-app > main > msg-page > msg-page-modal > msg-new-chat > footer > msg-button:nth-child(1) > slot > msg-l10n')");
+        b.click();*/

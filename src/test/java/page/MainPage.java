@@ -10,4 +10,7 @@ public class MainPage {
     public void goToMusicTab(){
         $(byXpath("//*[@id=\"topPanel\"]/div[2]/div[1]/div/ul/li[8]")).click();
     }
+    public void goToMessagesTab(){
+        $(byXpath("//*[@id=\"msg_toolbar_button\"]/div[1]")).click();
+    }
 }

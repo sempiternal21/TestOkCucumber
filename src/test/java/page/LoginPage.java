@@ -2,6 +2,9 @@ package page;
 
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.empty;
+import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -17,5 +20,13 @@ public class LoginPage {
         loginInput.setValue(login);
         passwordInput.setValue(password);
         buttonLogin.click();
+    }
+
+    public void checkSuccessfulLogged(){
+        $(byText("Incorrect username and/or password")).shouldNotBe(exist);
+    }
+
+    public void checkUnSuccessfulLogged(){
+        buttonLogin.shouldBe(exist);
     }
 }

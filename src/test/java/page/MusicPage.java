@@ -1,13 +1,18 @@
 package page;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
 
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MusicPage {
     public void findMusic(String arg0){
@@ -30,6 +35,7 @@ public class MusicPage {
     }
 
     public void trackAddedSuccessfully(){
-        $(byXpath("//*[@id=\"music_layer\"]/wm-toast/slot")).shouldBe(exist);
+        $(byXpath("//*[@id=\"music_layer\"]/main/div/nav/wm-nav/a[2]")).click();
+        $(byXpath("//*[@id=\"music_layer\"]/main/div/library-page/wm-portlet[1]/slot/wm-tracks-list/main/wm-track/slot[2]/wm-card-details/slot[1]/a")).shouldBe(text("1996"));
     }
 }

@@ -6,12 +6,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import page.LoginPage;
+import sun.rmi.runtime.Log;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LoginTest{
+
+    LoginPage loginPage = new LoginPage();
 
     @After
     public void fff(){
@@ -25,17 +28,17 @@ public class LoginTest{
 
     @When("I login as {string} with password {string}")
     public void iLoginAsWithPassword(String login, String password) {
-        (new LoginPage()).authorization(login, password);
+        loginPage.authorization(login, password);
     }
 
     @Then("I have been successfully logged")
     public void iHaveBeenSuccessfullyLogged() {
-        $(byText("Incorrect username and/or password")).shouldNotBe(exist);
+        loginPage.checkSuccessfulLogged();
     }
 
 
     @Then("I couldn't log in")
     public void iCouldnTLogIn() {
-        $(byText("Incorrect username and/or password")).shouldBe(exist);
+        loginPage.checkUnSuccessfulLogged();
     }
 }
