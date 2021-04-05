@@ -15,8 +15,16 @@ import static com.codeborne.selenide.Selenide.$;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MusicPage {
-    public void findMusic(String arg0){
-        $(byXpath("//*[@id=\"music_layer\"]/header/div/wm-search-form/wm-search-input/input")).setValue(arg0);
+
+    String authorLastAddedTrack;
+    String titleLastAddedTrack;
+
+    public void findMusic(String arg0, String arg1){
+
+        titleLastAddedTrack = arg0;
+        authorLastAddedTrack = arg1;
+
+        $(byXpath("//*[@id=\"music_layer\"]/header/div/wm-search-form/wm-search-input/input")).setValue(arg0 + " " + arg1);
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
@@ -36,6 +44,7 @@ public class MusicPage {
 
     public void trackAddedSuccessfully(){
         $(byXpath("//*[@id=\"music_layer\"]/main/div/nav/wm-nav/a[2]")).click();
-        $(byXpath("//*[@id=\"music_layer\"]/main/div/library-page/wm-portlet[1]/slot/wm-tracks-list/main/wm-track/slot[2]/wm-card-details/slot[1]/a")).shouldBe(text("1996"));
+        $(byXpath("//*[@id=\"music_layer\"]/main/div/library-page/wm-portlet[1]/slot/wm-tracks-list/main/wm-track/slot[2]/wm-card-details/slot[1]/a")).shouldBe(text(titleLastAddedTrack));
+        $(byXpath("//*[@id=\"music_layer\"]/main/div/library-page/wm-portlet[1]/slot/wm-tracks-list/main/wm-track/slot[2]/wm-card-details/slot[2]/a")).shouldBe(text(authorLastAddedTrack));
     }
 }

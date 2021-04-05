@@ -14,9 +14,9 @@ public class AddMusicTest {
         (new MainPage()).goToMusicTab();
     }
 
-    @And("I type in the search {string}")
-    public void iTypeInTheSearch(String arg0){
-        musicPage.findMusic(arg0);
+    @And("I type in the search {string} by {string}")
+    public void iTypeInTheSearchBy(String arg0, String arg1) {
+        musicPage.findMusic(arg0, arg1);
     }
 
     @And("I click on the track")
@@ -33,6 +33,7 @@ public class AddMusicTest {
     public void iSeeAnAlertThatTheMusicHasBeenAdded() {
         musicPage.trackAddedSuccessfully();
     }
+
 
 
 }
