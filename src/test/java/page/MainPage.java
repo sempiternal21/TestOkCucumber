@@ -13,4 +13,8 @@ public class MainPage {
     public void goToMessagesTab(){
         $(byXpath("//*[@id=\"msg_toolbar_button\"]/div[1]")).click();
     }
+
+    public void goToGroupsPage() {
+        $(byXpath("//*[@id=\"hook_Block_Navigation\"]/div/div/a[3]")).click();
+    }
 }
