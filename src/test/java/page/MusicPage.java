@@ -19,32 +19,28 @@ public class MusicPage {
     String authorLastAddedTrack;
     String titleLastAddedTrack;
 
-    public void findMusic(String arg0, String arg1){
+    public void findMusic(String title, String artist){
 
-        titleLastAddedTrack = arg0;
-        authorLastAddedTrack = arg1;
+        titleLastAddedTrack = title;
+        authorLastAddedTrack = artist;
 
-        $(byXpath("//*[@id=\"music_layer\"]/header/div/wm-search-form/wm-search-input/input")).setValue(arg0 + " " + arg1);
-        try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        $(byXpath("//*[@id=\"music_layer\"]/header/div/wm-search-form/wm-search-input/input")).sendKeys(Keys.ENTER);
+        $(byXpath("//input[@placeholder='Поиск']")).setValue(title + " " + artist);
+        $(byXpath("//wm-search-input//wm-icon[contains(@class, 'submit')]")).click();
+
     }
 
     public void clickOnTheTrack(){
-        $(byXpath("//*[@id=\"music_layer\"]/main/div/search-page/wm-portlet/slot/wm-tracks-list/main/wm-track[1]/slot[2]/wm-card-details/slot[2]")).click();
-        $(byXpath("//*[@id=\"music_layer\"]/main/div/search-page/wm-portlet/slot/wm-tracks-list/main/wm-track[1]/slot[2]/wm-card-details/slot[2]")).click();
+        $(byXpath("(//wm-track//slot[@name='title'])[1]")).click();
+        $(byXpath("(//wm-track//slot[@name='title'])[1]")).click();
     }
 
     public void addTrackToMyMusic(){
-        $(byXpath("//*[@id=\"music_layer\"]/header/wm-player/div/wm-player-actions/wm-track-add-button")).click();
+        $(byXpath("//wm-track-add-button")).click();
     }
 
     public void trackAddedSuccessfully(){
-        $(byXpath("//*[@id=\"music_layer\"]/main/div/nav/wm-nav/a[2]")).click();
-        $(byXpath("//*[@id=\"music_layer\"]/main/div/library-page/wm-portlet[1]/slot/wm-tracks-list/main/wm-track/slot[2]/wm-card-details/slot[1]/a")).shouldBe(text(titleLastAddedTrack));
-        $(byXpath("//*[@id=\"music_layer\"]/main/div/library-page/wm-portlet[1]/slot/wm-tracks-list/main/wm-track/slot[2]/wm-card-details/slot[2]/a")).shouldBe(text(authorLastAddedTrack));
+        $(byXpath("//wm-nav//a[@data-l='t,library']")).click();
+        $(byXpath("(//wm-track//slot[@name='title'])[1]")).shouldBe(text(titleLastAddedTrack));
+        $(byXpath("(//wm-track//slot[@name='info' and not(@class='info')])[1]")).shouldBe(text(authorLastAddedTrack));
     }
 }

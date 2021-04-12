@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class FriendsPage {
     public String getCountFriends(){
-        return $(byXpath("//*[@id=\"hook_Block_MiddleColumnTopCard_MenuUser\"]/div/a[2]/span")).getText();
+        return $(byXpath("//*[@id=\"hook_Block_MiddleColumnTopCard_MenuUser\"]//*[contains(text(), 'Друзья')]/span")).getText();
     }
 
     public boolean getSpecificFriends(String href){

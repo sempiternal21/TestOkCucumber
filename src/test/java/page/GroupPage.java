@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class GroupPage {
     public void checkSubscription() {
-        $(byXpath("//*[@id=\"hook_Block_AltGroupMainMenu\"]/ul/div/div/span")).shouldHave(text("В группе"));
+        $(byXpath("//*[contains(@class, 'dropdown __wide')]/span")).shouldHave(text("В группе"));
     }
 }

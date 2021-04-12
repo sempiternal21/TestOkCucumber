@@ -8,10 +8,10 @@ import io.cucumber.java.en.When;
 import page.FriendsPage;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Feature2{
+public class CheckSpecificFriend {
 
     @Then("The user that the link {string} points to is in my friends")
-    public void theUserThatTheLinkPointsToIsInMyFriends(String arg0) {
-        assertTrue((new FriendsPage()).getSpecificFriends(arg0));
+    public void theUserThatTheLinkPointsToIsInMyFriends(String link) {
+        assertTrue((new FriendsPage()).getSpecificFriends(link));
     }
 }

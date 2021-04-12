@@ -13,7 +13,7 @@ public class LoginPage {
 
     SelenideElement loginInput = $(byXpath("//*[@id=\"field_email\"]"));
     SelenideElement passwordInput = $(byXpath("//*[@id=\"field_password\"]"));
-    SelenideElement buttonLogin = $(byXpath("//*[@id=\"anonymPageContent\"]/div[2]/div/div[3]/form/div[5]/div[1]/input"));
+    SelenideElement buttonLogin = $(byXpath("//*[contains(@class, 'button-pro __wide')]"));
 
     public void authorization(String login, String password){
         open("https://ok.ru/");

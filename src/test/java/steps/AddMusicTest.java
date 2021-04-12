@@ -15,8 +15,8 @@ public class AddMusicTest {
     }
 
     @And("I type in the search {string} by {string}")
-    public void iTypeInTheSearchBy(String arg0, String arg1) {
-        musicPage.findMusic(arg0, arg1);
+    public void iTypeInTheSearchBy(String title, String artist) {
+        musicPage.findMusic(title, artist);
     }
 
     @And("I click on the track")

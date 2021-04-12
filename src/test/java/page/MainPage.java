@@ -5,16 +5,12 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
     public void goToFriendsTab(){
-        $(byXpath("//*[@id=\"topPanel\"]/div[2]/div[1]/div/ul/li[4]")).click();
+        $(byXpath("//*[@id=\"topPanel\"]//li[@data-l='t,friends']")).click();
     }
     public void goToMusicTab(){
-        $(byXpath("//*[@id=\"topPanel\"]/div[2]/div[1]/div/ul/li[8]")).click();
+        $(byXpath("//*[@id=\"topPanel\"]//li[@data-l='t,music']")).click();
     }
     public void goToMessagesTab(){
-        $(byXpath("//*[@id=\"msg_toolbar_button\"]/div[1]")).click();
-    }
-
-    public void goToGroupsPage() {
-        $(byXpath("//*[@id=\"hook_Block_Navigation\"]/div/div/a[3]")).click();
+        $(byXpath("//*[@id=\"topPanel\"]//li[@data-l='t,messages']")).click();
     }
 }
