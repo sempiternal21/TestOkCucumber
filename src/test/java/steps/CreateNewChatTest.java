@@ -23,6 +23,7 @@ public class CreateNewChatTest{
 
     @And("I click on the create chat button")
     public void iClickOnTheCreateChatButton(){
+        dialogsPage.hideAlert();
         dialogsPage.clickAddChatsButton();
         dialogsPage.clickAddTextChatButton();
         dialogsPage.clickSubmitButton();

@@ -3,6 +3,7 @@ package page;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selectors.shadowCss;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -22,5 +23,9 @@ public class DialogsPage {
     public void successCreateChat(){
         SelenideElement se3 = $(shadowCss("msg-app > main > msg-page > div.messenger_main > msg-chat > main > section > div > msg-message-list > div > div.group > div.control-message > msg-control-message > div > msg-l10n:nth-child(2)", "#msg_layer"));
         se3.shouldBe(exist);
+    }
+    public void hideAlert(){
+        SelenideElement inputFind = $(shadowCss("msg-app > main > msg-page > div.messenger_side > msg-chats-panel > msg-toolbar > main > slot > msg-search-input > input", "#msg_layer"));
+        inputFind.click();
     }
 }
