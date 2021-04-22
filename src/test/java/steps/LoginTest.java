@@ -6,12 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import page.LoginPage;
-import sun.rmi.runtime.Log;
 
-import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LoginTest{
 
     LoginPage loginPage = new LoginPage();

@@ -1,31 +1,24 @@
 package page;
 
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.selector.ByShadow;
 
 import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selectors.shadowCss;
 import static com.codeborne.selenide.Selenide.$;
 
 public class DialogsPage {
     public void clickAddChatsButton(){
-        SelenideElement buttonAdd = $(shadowCss("msg-app > main > msg-page > div.messenger_side > msg-chats-panel > msg-toolbar > main > slot > msg-bubble > slot > msg-button", "#msg_layer"));
-        buttonAdd.click();
+        $(ByShadow.cssSelector("[data-l=\"t, createMenu\"]", "[id=\"msg_layer\"]")).click();
     }
     public void clickAddTextChatButton(){
-        SelenideElement buttonCreateChat = $(shadowCss("msg-app > main > msg-page > div.messenger_side > msg-chats-panel > msg-toolbar > main > slot > msg-bubble > div > slot > msg-menu > slot > msg-menu-item:nth-child(1)", "#msg_layer"));
-        buttonCreateChat.click();
+        $(ByShadow.cssSelector("[data-tsid=\"plus_create_chat\"]", "[id=\"msg_layer\"]")).click();
     }
     public void clickSubmitButton(){
-        SelenideElement buttonSubmit = $(shadowCss("msg-app > main > msg-page > msg-page-modal > msg-new-chat > footer > msg-button:nth-child(1)", "#msg_layer"));
-        buttonSubmit.click();
+        $(ByShadow.cssSelector("[data-tsid=\"finish_create_chat_button\"]", "[id=\"msg_layer\"]")).click();
     }
-    public void successCreateChat(){
-        SelenideElement se3 = $(shadowCss("msg-app > main > msg-page > div.messenger_main > msg-chat > main > section > div > msg-message-list > div > div.group > div.control-message > msg-control-message > div > msg-l10n:nth-child(2)", "#msg_layer"));
-        se3.shouldBe(exist);
+    public void checkSuccessCreateChat(){
+        $(ByShadow.cssSelector("[data-tsid=\"created_chat_system_msg\"]", "[id=\"msg_layer\"]")).shouldBe(exist);
     }
     public void hideAlert(){
-        SelenideElement inputFind = $(shadowCss("msg-app > main > msg-page > div.messenger_side > msg-chats-panel > msg-toolbar > main > slot > msg-search-input > input", "#msg_layer"));
-        inputFind.click();
+        $(ByShadow.cssSelector("[data-tsid=\"chat-search-input\"]", "[id=\"msg_layer\"]")).click();
     }
 }

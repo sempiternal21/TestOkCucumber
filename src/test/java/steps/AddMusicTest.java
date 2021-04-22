@@ -11,7 +11,7 @@ public class AddMusicTest {
 
     @When("I go to the music tab")
     public void iGoToTheMusicTab() {
-        (new MainPage()).goToMusicTab();
+        musicPage = (new MainPage()).goToMusicTab();
     }
 
     @And("I type in the search {string} by {string}")
@@ -29,9 +29,14 @@ public class AddMusicTest {
         musicPage.addTrackToMyMusic();
     }
 
+    @And("i go to my music library")
+    public void iGoToMyMusicLibrary() {
+        musicPage.goToMyMusicLibrary();
+    }
+
     @Then("I see an alert that the music has been added")
     public void iSeeAnAlertThatTheMusicHasBeenAdded() {
-        musicPage.trackAddedSuccessfully();
+        musicPage.checkTrackAddedSuccessfully();
     }
 
 

@@ -2,7 +2,6 @@ package page;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -15,8 +14,11 @@ public class LoginPage {
     SelenideElement passwordInput = $(byXpath("//*[@id=\"field_password\"]"));
     SelenideElement buttonLogin = $(byXpath("//*[contains(@class, 'button-pro __wide')]"));
 
-    public void authorization(String login, String password){
+    public LoginPage(){
         open("https://ok.ru/");
+    }
+
+    public void authorization(String login, String password){
         loginInput.setValue(login);
         passwordInput.setValue(password);
         buttonLogin.click();

@@ -1,18 +1,8 @@
 package page;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.Keys;
-
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
-
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class MusicPage {
 
@@ -38,8 +28,11 @@ public class MusicPage {
         $(byXpath("//wm-track-add-button")).click();
     }
 
-    public void trackAddedSuccessfully(){
+    public void goToMyMusicLibrary(){
         $(byXpath("//wm-nav//a[@data-l='t,library']")).click();
+    }
+
+    public void checkTrackAddedSuccessfully(){
         $(byXpath("(//wm-track//slot[@name='title'])[1]")).shouldBe(text(titleLastAddedTrack));
         $(byXpath("(//wm-track//slot[@name='info' and not(@class='info')])[1]")).shouldBe(text(authorLastAddedTrack));
     }
