@@ -1,12 +1,9 @@
 package steps;
 
-import com.codeborne.selenide.Selenide;
-import io.cucumber.java.After;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import page.FriendsPage;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.junit.Assert.assertTrue;
 
 public class CheckSpecificFriend {
 

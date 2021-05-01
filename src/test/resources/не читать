@@ -22,3 +22,17 @@
         TimeUnit.SECONDS.sleep(1);
         WebElement b = (WebElement)jse.executeScript("return document.querySelector('#msg_layer').shadowRoot.querySelector('msg-app > main > msg-page > msg-page-modal > msg-new-chat > footer > msg-button:nth-child(1) > slot > msg-l10n')");
         b.click();*/
+
+
+        import io.cucumber.junit.Cucumber;
+        import io.cucumber.junit.CucumberOptions;
+        import org.junit.runner.RunWith;
+
+        @RunWith(Cucumber.class)
+        @CucumberOptions(
+                features = {"src/test/resources/features"},
+                glue = {"steps"},
+                plugin = {"pretty"},
+                tags = "")
+        public class RunTest {
+        }

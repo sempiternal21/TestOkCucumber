@@ -2,7 +2,7 @@ Feature: I want to log in to "ok.ru"
 
   Scenario: I want to login with correct credentials
     Given I want to log in to my account
-    When I login as "89131102157" with password ""
+    When I login as "89131102157" with password "Z1X2C3"
     Then I have been successfully logged
 
   Scenario: I want to login with incorrect credentials

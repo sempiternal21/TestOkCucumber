@@ -3,11 +3,8 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.it.Ma;
 import page.DialogsPage;
 import page.MainPage;
-
-import static com.codeborne.selenide.Selenide.$;
 
 public class CreateNewChatTest{
 

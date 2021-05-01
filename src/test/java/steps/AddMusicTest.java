@@ -39,6 +39,4 @@ public class AddMusicTest {
         musicPage.checkTrackAddedSuccessfully();
     }
 
-
-
 }

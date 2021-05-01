@@ -1,0 +1,137 @@
+---- AspectJ Properties ---
+AspectJ Compiler 1.8.10 built on Monday Dec 12, 2016 at 19:07:48 GMT
+---- Dump Properties ---
+Dump file: ajcore.20210430.001704.331.txt
+Dump reason: org.aspectj.apache.bcel.classfile.ClassFormatException
+Dump on exception: true
+Dump at exit condition: abort
+---- Exception Information ---
+org.aspectj.apache.bcel.classfile.ClassFormatException: File: 'module-info': Invalid byte tag in constant pool: 19
+	at org.aspectj.apache.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:192)
+	at org.aspectj.apache.bcel.classfile.ClassParser.parse(ClassParser.java:131)
+	at org.aspectj.weaver.bcel.Utility.makeJavaClass(Utility.java:472)
+	at org.aspectj.weaver.bcel.BcelWorld.addSourceObjectType(BcelWorld.java:512)
+	at org.aspectj.weaver.tools.WeavingAdaptor.ensureDelegateInitialized(WeavingAdaptor.java:513)
+	at org.aspectj.weaver.tools.WeavingAdaptor$WeavingClassFileProvider.<init>(WeavingAdaptor.java:843)
+	at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.java:526)
+	at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.java:363)
+	at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:121)
+	at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform(ClassPreProcessorAgentAdapter.java:54)
+	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:246)
+	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
+	at java.instrument/sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:560)
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1009)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:801)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:699)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:622)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:190)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:499)
+	at cucumber.runtime.io.ResourceLoaderClassFinder.loadClass(ResourceLoaderClassFinder.java:44)
+	at cucumber.runtime.io.ResourceLoaderClassFinder.getDescendants(ResourceLoaderClassFinder.java:28)
+	at cucumber.runtime.java.MethodScanner.scan(MethodScanner.java:32)
+	at cucumber.runtime.java.JavaBackend.loadGlue(JavaBackend.java:111)
+	at cucumber.runner.Runner.<init>(Runner.java:39)
+	at cucumber.runner.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:42)
+	at cucumber.runner.ThreadLocalRunnerSupplier.access$000(ThreadLocalRunnerSupplier.java:13)
+	at cucumber.runner.ThreadLocalRunnerSupplier$1.initialValue(ThreadLocalRunnerSupplier.java:22)
+	at cucumber.runner.ThreadLocalRunnerSupplier$1.initialValue(ThreadLocalRunnerSupplier.java:19)
+	at java.base/java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:180)
+	at java.base/java.lang.ThreadLocal.get(ThreadLocal.java:170)
+	at cucumber.runner.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:38)
+	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:173)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:43)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:82)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:73)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:229)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:197)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:191)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+---- System Properties ---
+sun.desktop=gnome
+awt.toolkit=sun.awt.X11.XToolkit
+java.specification.version=10
+file.encoding.pkg=sun.io
+sun.cpu.isalist=
+sun.jnu.encoding=UTF-8
+java.class.path=/home/bob/IdeaProjects/TestOkCucumber/target/test-classes:/home/bob/IdeaProjects/TestOkCucumber/target/classes:/home/bob/.m2/repository/io/cucumber/cucumber-java/4.8.0/cucumber-java-4.8.0.jar:/home/bob/.m2/repository/io/cucumber/cucumber-core/4.8.0/cucumber-core-4.8.0.jar:/home/bob/.m2/repository/io/cucumber/gherkin/5.1.0/gherkin-5.1.0.jar:/home/bob/.m2/repository/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar:/home/bob/.m2/repository/io/cucumber/cucumber-expressions/7.0.2/cucumber-expressions-7.0.2.jar:/home/bob/.m2/repository/io/cucumber/datatable/1.1.14/datatable-1.1.14.jar:/home/bob/.m2/repository/io/cucumber/datatable-dependencies/1.1.14/datatable-dependencies-1.1.14.jar:/home/bob/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/bob/.m2/repository/io/cucumber/cucumber-junit/4.8.0/cucumber-junit-4.8.0.jar:/home/bob/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/bob/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/bob/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/bob/.m2/repository/org/junit/vintage/junit-vintage-engine/5.6.0/junit-vintage-engine-5.6.0.jar:/home/bob/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/home/bob/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/bob/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/bob/.m2/repository/com/codeborne/selenide/5.20.1/selenide-5.20.1.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/home/bob/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/bob/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/home/bob/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/bob/.m2/repository/io/github/bonigarcia/webdrivermanager/4.3.1/webdrivermanager-4.3.1.jar:/home/bob/.m2/repository/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar:/home/bob/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar:/home/bob/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/bob/.m2/repository/org/jsoup/jsoup/1.13.1/jsoup-1.13.1.jar:/home/bob/.m2/repository/org/rauschig/jarchivelib/1.1.0/jarchivelib-1.1.0.jar:/home/bob/.m2/repository/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar:/home/bob/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.0.3/httpclient5-5.0.3.jar:/home/bob/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.0.2/httpcore5-5.0.2.jar:/home/bob/.m2/repository/commons-codec/commons-codec/1.13/commons-codec-1.13.jar:/home/bob/.m2/repository/com/google/guava/guava/30.1.1-jre/guava-30.1.1-jre.jar:/home/bob/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/bob/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/bob/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/bob/.m2/repository/org/checkerframework/checker-qual/3.8.0/checker-qual-3.8.0.jar:/home/bob/.m2/repository/com/google/errorprone/error_prone_annotations/2.5.1/error_prone_annotations-2.5.1.jar:/home/bob/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/bob/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/home/bob/.m2/repository/io/qameta/allure/allure-junit5/2.13.1/allure-junit5-2.13.1.jar:/home/bob/.m2/repository/io/qameta/allure/allure-junit-platform/2.13.1/allure-junit-platform-2.13.1.jar:/home/bob/.m2/repository/org/junit/platform/junit-platform-launcher/1.5.2/junit-platform-launcher-1.5.2.jar:/home/bob/.m2/repository/io/qameta/allure/allure-cucumber4-jvm/2.13.9/allure-cucumber4-jvm-2.13.9.jar:/home/bob/.m2/repository/io/qameta/allure/allure-java-commons/2.13.9/allure-java-commons-2.13.9.jar:/home/bob/.m2/repository/io/qameta/allure/allure-model/2.13.9/allure-model-2.13.9.jar:/home/bob/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.2/jackson-databind-2.12.2.jar:/home/bob/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.2/jackson-annotations-2.12.2.jar:/home/bob/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.2/jackson-core-2.12.2.jar:/home/bob/.m2/repository/org/apache/tika/tika-core/1.25/tika-core-1.25.jar:/home/bob/.m2/repository/org/jooq/joor-java-8/0.9.13/joor-java-8-0.9.13.jar:
+java.vm.vendor="Oracle Corporation"
+sun.arch.data.model=64
+java.vendor.url=http://java.oracle.com/
+user.timezone=Europe/Moscow
+os.name=Linux
+java.vm.specification.version=10
+sun.java.launcher=SUN_STANDARD
+user.country=US
+sun.boot.library.path=/home/bob/Downloads/jdk-10.0.2/lib
+sun.java.command=/home/bob/IdeaProjects/TestOkCucumber/target/surefire/surefirebooter2484185563383524017.jar /home/bob/IdeaProjects/TestOkCucumber/target/surefire 2021-04-30T00-16-59_574-jvmRun1 surefire9336043324826601153tmp surefire_014200673137884791066tmp
+jdk.debug=release
+surefire.test.class.path=/home/bob/IdeaProjects/TestOkCucumber/target/test-classes:/home/bob/IdeaProjects/TestOkCucumber/target/classes:/home/bob/.m2/repository/io/cucumber/cucumber-java/4.8.0/cucumber-java-4.8.0.jar:/home/bob/.m2/repository/io/cucumber/cucumber-core/4.8.0/cucumber-core-4.8.0.jar:/home/bob/.m2/repository/io/cucumber/gherkin/5.1.0/gherkin-5.1.0.jar:/home/bob/.m2/repository/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar:/home/bob/.m2/repository/io/cucumber/cucumber-expressions/7.0.2/cucumber-expressions-7.0.2.jar:/home/bob/.m2/repository/io/cucumber/datatable/1.1.14/datatable-1.1.14.jar:/home/bob/.m2/repository/io/cucumber/datatable-dependencies/1.1.14/datatable-dependencies-1.1.14.jar:/home/bob/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/bob/.m2/repository/io/cucumber/cucumber-junit/4.8.0/cucumber-junit-4.8.0.jar:/home/bob/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/bob/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/bob/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/bob/.m2/repository/org/junit/vintage/junit-vintage-engine/5.6.0/junit-vintage-engine-5.6.0.jar:/home/bob/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/home/bob/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/bob/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/bob/.m2/repository/com/codeborne/selenide/5.20.1/selenide-5.20.1.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/home/bob/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/home/bob/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/bob/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/home/bob/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/bob/.m2/repository/io/github/bonigarcia/webdrivermanager/4.3.1/webdrivermanager-4.3.1.jar:/home/bob/.m2/repository/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar:/home/bob/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar:/home/bob/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/bob/.m2/repository/org/jsoup/jsoup/1.13.1/jsoup-1.13.1.jar:/home/bob/.m2/repository/org/rauschig/jarchivelib/1.1.0/jarchivelib-1.1.0.jar:/home/bob/.m2/repository/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar:/home/bob/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.0.3/httpclient5-5.0.3.jar:/home/bob/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.0.2/httpcore5-5.0.2.jar:/home/bob/.m2/repository/commons-codec/commons-codec/1.13/commons-codec-1.13.jar:/home/bob/.m2/repository/com/google/guava/guava/30.1.1-jre/guava-30.1.1-jre.jar:/home/bob/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/bob/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/bob/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/bob/.m2/repository/org/checkerframework/checker-qual/3.8.0/checker-qual-3.8.0.jar:/home/bob/.m2/repository/com/google/errorprone/error_prone_annotations/2.5.1/error_prone_annotations-2.5.1.jar:/home/bob/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/bob/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/home/bob/.m2/repository/io/qameta/allure/allure-junit5/2.13.1/allure-junit5-2.13.1.jar:/home/bob/.m2/repository/io/qameta/allure/allure-junit-platform/2.13.1/allure-junit-platform-2.13.1.jar:/home/bob/.m2/repository/org/junit/platform/junit-platform-launcher/1.5.2/junit-platform-launcher-1.5.2.jar:/home/bob/.m2/repository/io/qameta/allure/allure-cucumber4-jvm/2.13.9/allure-cucumber4-jvm-2.13.9.jar:/home/bob/.m2/repository/io/qameta/allure/allure-java-commons/2.13.9/allure-java-commons-2.13.9.jar:/home/bob/.m2/repository/io/qameta/allure/allure-model/2.13.9/allure-model-2.13.9.jar:/home/bob/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.2/jackson-databind-2.12.2.jar:/home/bob/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.2/jackson-annotations-2.12.2.jar:/home/bob/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.2/jackson-core-2.12.2.jar:/home/bob/.m2/repository/org/apache/tika/tika-core/1.25/tika-core-1.25.jar:/home/bob/.m2/repository/org/jooq/joor-java-8/0.9.13/joor-java-8-0.9.13.jar:
+sun.cpu.endian=little
+user.home=/home/bob
+user.language=en
+java.specification.vendor=Oracle Corporation
+java.version.date=2018-07-17
+java.home=/home/bob/Downloads/jdk-10.0.2
+file.separator=/
+basedir=/home/bob/IdeaProjects/TestOkCucumber
+java.vm.compressedOopsMode=32-bit
+line.separator=
+
+java.specification.name=Java Platform API Specification
+java.vm.specification.vendor=Oracle Corporation
+java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment
+surefire.real.class.path=/home/bob/IdeaProjects/TestOkCucumber/target/surefire/surefirebooter2484185563383524017.jar
+sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+java.runtime.version=10.0.2+13
+user.name=bob
+path.separator=:
+os.version=5.8.0-50-generic
+java.runtime.name=OpenJDK Runtime Environment
+file.encoding=UTF-8
+java.vm.name=OpenJDK 64-Bit Server VM
+java.vendor.version=18.3
+localRepository=/home/bob/.m2/repository
+java.vendor.url.bug=http://bugreport.java.com/bugreport/
+java.io.tmpdir=/tmp
+idea.version=2021.1
+java.version=10.0.2
+user.dir=/home/bob/IdeaProjects/TestOkCucumber
+os.arch=amd64
+java.vm.specification.name=Java Virtual Machine Specification
+java.awt.printerjob=sun.print.PSPrinterJob
+sun.os.patch.level=unknown
+java.library.path=/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+java.vendor=Oracle Corporation
+java.vm.info=mixed mode
+java.vm.version=10.0.2+13
+sun.io.unicode.encoding=UnicodeLittle
+java.class.version=54.0
+---- Command Line ---
+Empty
+---- Full Classpath ---
+Empty
+---- Compiler Messages ---
+Empty

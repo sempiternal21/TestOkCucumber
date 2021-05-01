@@ -5,7 +5,6 @@ import io.cucumber.java.en.When;
 import page.GroupPage;
 
 import static com.codeborne.selenide.Selenide.open;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CheckSubscriptionToGroup {
 
