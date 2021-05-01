@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resources/features"},
         plugin = {"io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"},
+        tags = {"~@music", "~@group"},
         monochrome=true)
 public class RunTest {
 }

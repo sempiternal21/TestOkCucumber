@@ -1,3 +1,4 @@
+@group
 Feature: I want to check subscription to the group
 
   Scenario: Check subscription to the group
