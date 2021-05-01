@@ -1,6 +1,10 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selectors.byText;
@@ -15,6 +19,12 @@ public class LoginPage {
     SelenideElement buttonLogin = $(byXpath("//*[contains(@class, 'button-pro __wide')]"));
 
     public LoginPage(){
+        System.setProperty("webdriver.chrome.driver", "/home/bob/Downloads/chromedriver");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--no-sandbox");
+        WebDriver driver = new ChromeDriver(chromeOptions);
+        WebDriverRunner.setWebDriver(driver);
         open("https://ok.ru/");
     }
 

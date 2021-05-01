@@ -11,6 +11,7 @@ public class LoginTest{
 
     LoginPage loginPage = new LoginPage();
 
+
     @After
     public void closeBrowser(){
         Selenide.closeWebDriver();
