@@ -19,12 +19,7 @@ public class LoginPage {
     SelenideElement buttonLogin = $(byXpath("//*[contains(@class, 'button-pro __wide')]"));
 
     public LoginPage(){
-        System.setProperty("webdriver.chrome.driver", "/home/bob/Downloads/chromedriver");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
-        chromeOptions.addArguments("--no-sandbox");
-        WebDriver driver = new ChromeDriver(chromeOptions);
-        WebDriverRunner.setWebDriver(driver);
+        System.setProperty("selenide.headless","true");
         open("https://ok.ru/");
     }
 
