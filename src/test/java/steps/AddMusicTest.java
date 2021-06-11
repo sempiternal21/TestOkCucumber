@@ -21,7 +21,7 @@ public class AddMusicTest {
 
     @And("I click on the track")
     public void iClickOnTheTrack() {
-        musicPage.clickOnTheTrack();
+        musicPage.clickOnTheFirstTrack();
     }
 
     @And("I click on the add music icon")
@@ -34,9 +34,9 @@ public class AddMusicTest {
         musicPage.goToMyMusicLibrary();
     }
 
-    @Then("I see an alert that the music has been added")
-    public void iSeeAnAlertThatTheMusicHasBeenAdded() {
-        musicPage.checkTrackAddedSuccessfully();
+    @Then("I see an alert that the music {string} by {string} has been added")
+    public void iSeeAnAlertThatTheMusicHasBeenAdded(String title, String artist) {
+        musicPage.checkTrackAddedSuccessfully(title, artist);
     }
 
 }

@@ -19,7 +19,7 @@ public class LoginPage {
     SelenideElement buttonLogin = $(byXpath("//*[contains(@class, 'button-pro __wide')]"));
 
     public LoginPage(){
-        System.setProperty("selenide.headless","true");
+//        System.setProperty("selenide.headless","true");
         open("https://ok.ru/");
     }
 

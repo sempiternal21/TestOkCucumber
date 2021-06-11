@@ -11,12 +11,16 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class FriendsPage {
+
+    private final String COUNT_FRIENDS_LOCATOR = "//*[@id=\"hook_Block_MiddleColumnTopCard_MenuUser\"]//*[contains(text(), 'Друзья')]/span";
+    private final String FRIEND_LINK_LOCATOR = "//li[@class='ugrid_i']//a[contains(@href,'profile')][@class='user-grid-card_img']";
+
     public String getCountFriends(){
-        return $(byXpath("//*[@id=\"hook_Block_MiddleColumnTopCard_MenuUser\"]//*[contains(text(), 'Друзья')]/span")).getText();
+        return $(byXpath(COUNT_FRIENDS_LOCATOR)).getText();
     }
 
-    public boolean getSpecificFriends(String href){
-        ElementsCollection ce =  $$(byXpath("//li[@class='ugrid_i']/div/div/a"));
+    public boolean isMyFriend(String href){
+        ElementsCollection ce =  $$(byXpath(FRIEND_LINK_LOCATOR));
         String se = ce.get(1).getAttribute("href");
 
         for (SelenideElement strHref : ce) {

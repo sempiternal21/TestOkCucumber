@@ -1,19 +1,27 @@
 package page;
 
+import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
+
+    SelenideElement topPanel = $(byXpath("//*[@id=\"topPanel\"]"));
+    SelenideElement friendsTabButton = $(byXpath(".//li[@data-l='t,friends']"));
+    SelenideElement musicTabButton = $(byXpath(".//li[@data-l='t,music']"));
+    SelenideElement messagesTabButton = $(byXpath(".//li[@data-l='t,messages']"));
+
     public FriendsPage goToFriendsTab(){
-        $(byXpath("//*[@id=\"topPanel\"]//li[@data-l='t,friends']")).click();
+        friendsTabButton.click();
         return new FriendsPage();
     }
     public MusicPage goToMusicTab(){
-        $(byXpath("//*[@id=\"topPanel\"]//li[@data-l='t,music']")).click();
+        musicTabButton.click();
         return new MusicPage();
     }
     public DialogsPage goToMessagesTab(){
-        $(byXpath("//*[@id=\"topPanel\"]//li[@data-l='t,messages']")).click();
+        messagesTabButton.click();
         return new DialogsPage();
     }
 }

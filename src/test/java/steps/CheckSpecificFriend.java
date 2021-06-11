@@ -9,6 +9,6 @@ public class CheckSpecificFriend {
 
     @Then("The user that the link {string} points to is in my friends")
     public void theUserThatTheLinkPointsToIsInMyFriends(String link) {
-        assertTrue((new FriendsPage()).getSpecificFriends(link));
+        assertTrue((new FriendsPage()).isMyFriend(link));
     }
 }

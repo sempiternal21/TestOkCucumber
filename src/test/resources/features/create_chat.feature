@@ -1,3 +1,5 @@
+@chat
+
 Feature: I want to create a chat
 
   Scenario: I create an empty chat
